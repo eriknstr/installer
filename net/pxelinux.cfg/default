@@ -1,0 +1,6 @@
+LABEL linux
+        kernel vmlinux
+        append vga=normal initrd=initrd.gz  --
+
+LABEL local
+	LOCALBOOT 0
