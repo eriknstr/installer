@@ -1,5 +1,10 @@
 #!/bin/sh
 
+export ARCH=i386
+export CFLAGS=-m32
+export CPPFLAGS=-m32
+export LDFLAGS=-m32
+
 cd work/busybox
 
 # Change to the first directory ls finds, e.g. 'busybox-1.23.1'
@@ -30,4 +35,3 @@ make busybox -j $(grep ^processor /proc/cpuinfo | wc -l)
 make install
 
 cd ../../..
-

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+export ARCH=i386
+export CFLAGS=-m32
+export CPPFLAGS=-m32
+export LDFLAGS=-m32
+
 cd work/kernel
 
 # Change to the first directory ls finds, e.g. 'linux-3.18.6'
@@ -20,4 +25,3 @@ sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"minimal\"/" .con
 make bzImage -j $(grep ^processor /proc/cpuinfo | wc -l)
 
 cd ../../..
-
