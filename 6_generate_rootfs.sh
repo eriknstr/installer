@@ -23,7 +23,8 @@ mkdir src
 mkdir sys
 mkdir tmp
 
-cp ../redox.bin.gz root
+#Copy redox image
+cp ../redox.bin.gz redox.bin.gz
 
 # "1" means that only the owner of a file/directory (or root) can remove it.
 chmod 1777 tmp
