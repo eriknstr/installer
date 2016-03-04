@@ -23,9 +23,6 @@ mkdir src
 mkdir sys
 mkdir tmp
 
-# Copy Redox image
-cp ../redox.bin.gz redox.bin.gz
-
 # "1" means that only the owner of a file/directory (or root) can remove it.
 chmod 1777 tmp
 
@@ -117,6 +114,36 @@ cp ../../*.sh src
 cp ../../.config src
 chmod +r src/*.sh
 chmod +r src/.config
+
+cd bin
+
+# Create redox installer
+cat > redox-installer << "EOF"
+#!/bin/sh
+
+ls -1 /dev/sd*
+
+echo "Which device would you like to install Redox to?"
+read device
+
+echo "Are you sure you want to install Redox to $device (y/n)?"
+read prompt
+if [ "$prompt" == "y" ]
+then
+    gunzip -c /redox.bin.gz | dd of="$device"
+    echo "Installed Redox to $device"
+else
+    echo "Redox installation cancelled"
+fi
+
+EOF
+
+chmod +x redox-installer
+
+cd ..
+
+# Copy Redox image
+cp ../redox.bin.gz redox.bin.gz
 
 cd ../..
 
