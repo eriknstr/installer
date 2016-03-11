@@ -69,8 +69,8 @@ cat > welcome.txt << EOF
 
   #####################################
   #                                   #
-  #  Welcome to "Minimal Linux Live"  #
-  #          Redox Installer          #
+  #  Welcome to the Redox Installer   #
+  #       Run `redox-installer`       #
   #                                   #
   #####################################
 
