@@ -70,7 +70,7 @@ cat > welcome.txt << EOF
   #####################################
   #                                   #
   #  Welcome to the Redox Installer   #
-  #       Run `redox-installer`       #
+  #       Run 'redox-installer'       #
   #                                   #
   #####################################
 
