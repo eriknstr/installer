@@ -1,5 +1,5 @@
 #!/bin/sh
-REDOX="$PWD/../redox/"
+REDOX="$PWD/../"
 
 make -C "$REDOX" all
 
