@@ -126,7 +126,7 @@ ls -1 /dev/sd*
 echo "Which device would you like to install Redox to?"
 read device
 
-echo "Are you sure you want to install Redox to $device (y/n)?"
+echo "Are you sure you want to install Redox to $device ? All the data on this disk will be lost. (y/n)"
 read prompt
 if [ "$prompt" == "y" ]
 then
