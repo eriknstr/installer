@@ -5,7 +5,7 @@ export CFLAGS=-m32
 export CPPFLAGS=-m32
 export LDFLAGS=-m32
 
-rm -f minimal_linux_live.iso
+rm -f redox-installer.iso
 
 cd work/kernel
 cd $(ls -d *)
