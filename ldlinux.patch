@@ -1,0 +1,12 @@
+--- a/arch/x86/boot/Makefile	2016-06-01 13:18:22.000000000 -0600
++++ b/arch/x86/boot/Makefile	2016-06-08 16:29:35.334645602 -0600
+@@ -173,6 +173,9 @@
+ 			cp /usr/$$i/syslinux/isolinux.bin $(obj)/isoimage ; \
++			if [ -f /usr/$$i/syslinux/modules/bios/ldlinux.c32 ] ; then \
++				cp /usr/$$i/syslinux/modules/bios/ldlinux.c32 $(obj)/isoimage ; \
++			fi ; \
+ 			break ; \
+ 		fi ; \
+ 		if [ $$i = end ] ; then exit 1 ; fi ; \
+ 	done
+ 	cp $(obj)/bzImage $(obj)/isoimage/linux

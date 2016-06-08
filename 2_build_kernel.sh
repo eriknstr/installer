@@ -10,6 +10,9 @@ cd work/kernel
 # Change to the first directory ls finds, e.g. 'linux-3.18.6'
 cd $(ls -d *)
 
+# Patch for ldlinux
+patch -p1 < ../../../ldlinux.patch
+
 # Cleans up the kernel sources, including configuration files
 make mrproper
 
